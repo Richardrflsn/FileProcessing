@@ -56,13 +56,14 @@ def important_features(vectorizer,classifier,n=40):
     return (class1_frequency_dict, class2_frequency_dict)
 
 def process_uploaded_file(file_path):
-    if file_path.endswith('.bz2'):
-        with bz2.BZ2File(file_path, 'r') as file:
+    if file_path.endswith('.txt'):
+        with open(file_path, 'r', encoding='utf-8') as file:
             # Process the contents of the file, for example, using pandas
             train_file = pd.read_csv(file, delimiter='\t', header=None, names=['Label', 'Text'])
             # Add your processing logic here
             print(train_file.head())
-            train_file_lines['Text'] = [x.decode('utf-8') if isinstance(x, bytes) else str(x) for x in train_file['Text']]
+            train_file['Text'] = train_file['Text'].astype(str)  # Convert 'Text' column to string
+            train_file_lines = train_file['Text'].tolist()
             del train_file
             gc.collect()
             print(type(train_file_lines), "\n")
