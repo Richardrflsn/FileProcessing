@@ -4,7 +4,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 from wtforms.validators import InputRequired
 import os
-from script import process_uploaded_file
+from script import process_csv
 
 ALLOWED_EXTENSIONS = set(['csv', 'bz2', 'txt'])
 app = Flask(__name__)
@@ -30,9 +30,9 @@ def home(filename=None):
             file_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
 
-            output_file = process_uploaded_file(file_path)
-            # return redirect(url_for('download'))
-            return "File uploaded and processed"
+            output_file = process_csv(file_path)
+            return redirect(url_for('download'))
+            # return "File uploaded and processed"
     return render_template('index.html', form=form)
 
 @app.route('/download')
