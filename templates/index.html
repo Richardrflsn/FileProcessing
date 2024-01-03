@@ -17,8 +17,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    <a class="nav-link" href="#features">Features</a>
                     <a class="nav-link" href="#program">Program</a>
+                    <a class="nav-link" href="#features">Features</a>
                     <a class="nav-link disabled" aria-disabled="true">Developer</a>
                 </div>
             </div>
@@ -39,10 +39,24 @@
         </div>
     </section>
 
+    <section id="program">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Program <span class="badge bg-warning">On Progress</span></h4> 
+            </div>
+        </div>
+            
+        <form class="text-center p-5" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.file() }}
+            {{ form.submit() }}
+        </form>
+    </section>
+
     <section id="features">
         <div class="card text-center">
             <div class="card-header">
-                Features
+                <h4>Features </h4>
             </div>
             <div class="card-body">
                 <h5 class="card-title">File Processing</h5>
@@ -56,24 +70,11 @@
                 <h5 class="card-title">Responsive Website</h5>
                 <p class="card-text">Metode desain ini menjamin pengalaman pengguna yang lancar dan optimal di berbagai perangkat serta layar dengan ukuran yang berbeda. Struktur dan komponen dari situs web responsif secara fleksibel menyesuaikan dan berubah sesuai dengan ciri-ciri perangkat yang digunakan, termasuk desktop, laptop, tablet, atau ponsel pintar.</p>
             </div>
-            <div class="card-footer text-body-secondary">
-                2 days ago
-            </div>
         </div>
     </section>
 
-    <section id="program">
-        <div class="text-center pt-5"><h3>Program <span class="badge bg-warning">On Progress</span></h3> </div>
-            
-        <form class="text-center pt-2" method="POST" enctype="multipart/form-data">
-            {{ form.hidden_tag() }}
-            {{ form.file() }}
-            {{ form.submit() }}
-        </form>
-    </section>
-
     <section id="developer">
-        
+
     </section>
 
     <script src="script.js"></script>
