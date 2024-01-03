@@ -8,7 +8,7 @@
     <title>Home</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Artificial Intelligence</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,23 +16,67 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Program</a>
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#program">Program</a>
                     <a class="nav-link disabled" aria-disabled="true">Developer</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="text-center pt-5"><h1>Text Processing Using Flask Apps</h1></div>
+    <section id="home">
+        <div class="px-4 py-4 my-4 text-center">
+            <h1 class="display-5 fw-bold">File to Text:</h1>
+            <h3 class="display-7">Simplifying Data with Processing Programs</h3>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Program ini didukung dengan file processing dalam melakukan Pemrosesan file mencakup kegiatan membaca, menulis, dan mengelola data yang tersimpan dalam file.
+                    Setelah dilakukan File processing program ini akan menganalisis menggunakan text processing agar menghasilkan analisis yang dapat mudah dimengerti.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <form class="text-center pt-2" method="POST" enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        {{ form.file() }}
-        {{ form.submit() }}
-    </form>
+    <section id="features">
+        <div class="card text-center">
+            <div class="card-header">
+                Features
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">File Processing</h5>
+                <p class="card-text">Pemrosesan file mencakup kegiatan membaca, menulis, dan mengelola data yang tersimpan dalam file, memungkinkan program berkomunikasi dengan sumber data dari luar. Hal ini melibatkan tindakan seperti membuka file, membaca kontennya, serta menyimpan atau mengubah data.</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Text Processing</h5>
+                <p class="card-text">Pemrosesan teks secara spesifik bertujuan pada manipulasi dan analisis data teks. Kegiatan ini mencakup tugas seperti parsing, mencari, dan mengubah string teks, memungkinkan penanganan informasi dengan efektif dalam bentuk yang dapat dimengerti oleh manusia.</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Responsive Website</h5>
+                <p class="card-text">Metode desain ini menjamin pengalaman pengguna yang lancar dan optimal di berbagai perangkat serta layar dengan ukuran yang berbeda. Struktur dan komponen dari situs web responsif secara fleksibel menyesuaikan dan berubah sesuai dengan ciri-ciri perangkat yang digunakan, termasuk desktop, laptop, tablet, atau ponsel pintar.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+                2 days ago
+            </div>
+        </div>
+    </section>
 
+    <section id="program">
+        <div class="text-center pt-5"><h3>Program <span class="badge bg-warning">On Progress</span></h3> </div>
+            
+        <form class="text-center pt-2" method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.file() }}
+            {{ form.submit() }}
+        </form>
+    </section>
+
+    <section id="developer">
+        
+    </section>
+
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
