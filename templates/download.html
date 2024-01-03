@@ -1,3 +1,20 @@
-{% for filename in files %}
-<a href="{{ url_for('download_file', filename=filename) }}">{{ filename }}</a><br />
-{% endfor %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>download</title>
+</head>
+<body>
+    <section id="program">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Download <span class="badge bg-success">ready</span></h4> 
+            </div>
+        </div>
+        {% for filename in files %}
+        <a href="{{ url_for('download_file', filename=filename) }}">{{ filename }}</a><br />
+        {% endfor %}
+    </section>
+</body>
+</html>
